@@ -15,7 +15,7 @@ import marimo
 __generated_with = "0.19.9"
 app = marimo.App(
     width="medium",
-    layout_file="layouts/2026-de-analysis.slides.json",
+    layout_file="layouts/2026-sql-data-modeling.slides.json",
     auto_download=["html"],
     sql_output="native",
 )
@@ -30,10 +30,11 @@ with app.setup(hide_code=True):
 
 @app.cell(hide_code=True)
 def _():
-    title = mo.md(r"""# SQL Databases""")
-    subtitle = mo.md(r"""## and LZ Metadata """)
-    author = mo.md(r"Eli Mizrachi")
-    mo.vstack([title, subtitle, author], align="center", justify="center")
+    title = mo.md(r"""# Data Modeling""")
+    subtitle = mo.md(r"""## and SQL Databases """)
+    author = mo.md(r"### Eli Mizrachi (they/them)")
+    subsubtitle = mo.md("""SLAc National Accelerator Laboratory""")
+    mo.vstack([title, subtitle, author, subsubtitle], align="center", justify="center")
     return
 
 
@@ -73,7 +74,7 @@ def _():
 
 @app.cell(hide_code=True)
 def _():
-    _title = mo.md("##  The Heirarchical Model")
+    _title = mo.md("##  The Hierarchical Model")
     _col1 = mo.md(r"""
     - 1963: Rockwell Int'l requests part tracking system from IBM for Apollo program
     - 1965: Berman (IBM) and Nordyke (Rockwell) develop Disk Applications in a Teleprocessing Environment (DATE)
@@ -109,10 +110,10 @@ def _():
 def _():
     _title = mo.md("## The Relational Model")
     _col1 = mo.md(r"""
-    - 1970: Edgar Codd (IBM) publishes mathematical formalism of relational model for databases to escape constraints of heirarchical model ([1](https://dl.acm.org/doi/10.1145/362384.362685), [2](https://www.ibm.com/history/relational-database))
+    - 1970: Edgar Codd (IBM) publishes mathematical formalism of relational model for databases to escape constraints of hierarchical model ([1](https://dl.acm.org/doi/10.1145/362384.362685), [2](https://www.ibm.com/history/relational-database))
       - Store data in relational tables, identify rows with "keys", operations to query data
     - 1974: Structured English Query Language (SEQUEL) developed by Bryce (IBM) and Chamberlin (IBM) ([3](https://dl.acm.org/doi/10.1145/800296.811515))
-      > ...identify the basic functions that are required by database users and develop a simple and consistent set of rules for applying thse functions to data.
+      > ...identify the basic functions that are required by database users and develop a simple and consistent set of rules for applying these functions to data.
     """)
 
     _col2_1 = mo.md("""
@@ -150,7 +151,7 @@ def _():
       - $1:n$ "one-to-many"
       - $n:m$ "many-to-many"
     - Extremely useful abstraction for reasoning about how real-world data is structured
-      - Can derive heirarchical, relational models, or others
+      - Can derive hierarchical, relational models, or others
     """)
 
     _col2 = mo.image("public/img/chen-er-fig10.png")
@@ -366,7 +367,7 @@ def _():
     - Store data in rows ("records"), rows live in tables, tables live in databases
     - Some systems implement "catalogs" which house multiple databases
     - "NoSQL" databases also exist! (see backup)
-      - Highly optimized for non-tabluar data (e.g. vector stores, graphs)
+      - Highly optimized for non-tabular data (e.g. vector stores, graphs)
       - Special mention: "Document" databases (store JSON-like data) have lost ground to SQL DBs which can handle JSON-like data
     """)
 
@@ -411,7 +412,7 @@ def _():
     _title = mo.md("""## ACID Compliance""")
     _col1 = mo.md(r"""
     - Atomicity: all operations in a transaction complete, or none of them do
-    - Concistency: validation mechanisms and constraints, e.g "Why is this phone number 13 digits?"
+    - Consistency: validation mechanisms and constraints, e.g "Why is this phone number 13 digits?"
     - Isolation: handle concurrent updates to the same data
     - Durability: changes should be saved to non-volatile memory to resist crashes/corruption
     """)
@@ -427,7 +428,7 @@ def _():
     flowchart TB
 
     A["Atomicity <br> 🧩"]
-    C["Concistency <br> ✅"]
+    C["Consistency <br> ✅"]
     I["Isolation <br> 🔒"]
     D["Durability <br> 💎"]
 
@@ -584,7 +585,7 @@ def _():
     - "Data Warehouse": analytical database with cleaned and joined data ready for queries
       - Pay for compute (expensive) and disk (cheap), overhead to maintain rigid schemas  
     - "Data Lake": Filesystem with assorted, unprocessed files (e.g. `CSV`, `JSON`, images)
-      - Pay mostly for disk, compute what you need, no goverance--watch the mess grow
+      - Pay mostly for disk, compute what you need, no governance--watch the mess grow
     - "Data Lakehouse": Filesystem with columnar file formats like `.parquet`, `.root`
       - Files are tracked and managed, then _metadata_ is warehoused in a "catalog"
     """)
