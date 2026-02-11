@@ -1,0 +1,4 @@
+name,email,gitlab,nersc
+Alice,"alice1@hotmail.com, alice2@gmail.com",1337alice,NULL
+Bob,bob1@gmail.com,NULL,bobg
+Charlie,"charlie@yahoo.com, charlie@stanford.edu",hacker_charlie,charliew

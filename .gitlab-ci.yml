@@ -1,0 +1,19 @@
+# This file was modified from gitlab's HTML template
+# Full project: https://gitlab.com/pages/plain-html
+
+quarto:
+  stage: build
+  image: ghcr.io/prefix-dev/pixi:latest
+  before_script:
+    - eval "$(pixi shell-hook -e dev)" # this works instead of pixi shell
+  script:
+    - marimo config show
+    - marimo export html-wasm 2026-sql-data-modeling.py -o site --mode edit -f --no-sandbox
+  artifacts:
+    paths:
+      - site
+  pages:
+    publish: site
+  rules:
+    - if: $CI_COMMIT_TAG # Run this job when a tag is created manually
+      when: manual

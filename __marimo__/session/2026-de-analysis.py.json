@@ -1,0 +1,463 @@
+{
+  "version": "1",
+  "metadata": {
+    "marimo_version": "0.19.9"
+  },
+  "cells": [
+    {
+      "id": "vblA",
+      "code_hash": "d3839795b0adea64ef58fbf0a1191c79",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">A Brief History of</span>\n<h1 id=\"data-modeling\">Data Modeling</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "55fa7a742d8f1e76464da43b48e42427",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">An Example of</span>\n<h1 id=\"data-transformation\">Data Transformation</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "4901149fed37ed7d2ad55648b4812b59",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Living the</span>\n<h1 id=\"sql-dream\">SQL DREAM<sup id=\"fnref:2-1\"><a class=\"footnote-ref\" href=\"#fn:2-1\">1</a></sup></h1>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:2-1\">Databases Rule Everything Around Me&#160;<a class=\"footnote-backref\" href=\"#fnref:2-1\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></li>\n</ol>\n</div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "4c562ea1b9932726434561bb7e97c609",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"types-of-sql-databases\">Types of SQL Databases</h2>\n<ul>\n<li>Row-oriented (transactional)</li>\n<li>\n<span class=\"paragraph\">Columnar (analytical)</span>\n<ul>\n<li>Lakehouse</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "a7c8da4ac08787deb9bf1096e4720ec8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"closing-thoughts\">Closing Thoughts</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "70fc76b666cfdbbeba8f9755a47594e5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"next-time\">Next Time?</h2>\n<ul>\n<li>\n<span class=\"paragraph\">LZ Metadata Databases</span>\n<ul>\n<li>The Fate of the LZ Run DB Viewer</li>\n</ul>\n</li>\n<li>Advanced queries with ibis: more joins, gaps and islands, ranking, aggregations</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "b150d310532541c583fbce57d6582420",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"backup\">Backup</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "8f3c28f8de66ee0538116b839dd3de35",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"nosql-databases\">NoSQL Databases</h2>\n<ul>\n<li>Vector: embed everything in a vector space, do similarity searches.</li>\n<li>Document: basically JSON, store hierarchical data</li>\n<li>Key-value: Lots of key-value pairs. Fast lookup and retrieval</li>\n<li>Graph: lots of nodes and edges</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TXez",
+      "code_hash": "22e1952afdd221265d31a80f1650d8aa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"more-realities\">More Realities</h2>\n<ul>\n<li>Frequency: \"Can this change in 'real-time' I add or modify a new entry?\"</li>\n<li>Orchestration: \"How can we schedule these jobs and their dependencies?\"</li>\n<li>Sources and sinks: <code>.root</code>, <code>.xlsx</code>, <code>.parquet</code>, <code>.CSV</code>, <code>.json</code>, databases, APIs...</li>\n<li>Versioning: \"my_dataset_v34.csv\"</li>\n<li>Lineage: \"How did you create that column?\"</li>\n<li>Visualization: \"Can I get a dashboard for this?\"</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "setup",
+      "code_hash": "0dd6a5d6e6064a27f7de7d30efee4849",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hbol",
+      "code_hash": "5505a5c9bdbd8e742f16b7fd084512a1",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: center;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"sql-databases\">SQL Databases</h1></span><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"and-lz-metadata\">and LZ Metadata</h2></span><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Eli Mizrachi</span></span></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "MJUe",
+      "code_hash": "cb8baf725483f312532e3c388f24d8c3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: flex-start;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"outline\">Outline</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 10rem'><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Data Modeling</li>\n<li>Data Transformation</li>\n<li>SQL Databases</li>\n<li>Closing thoughts</li>\n</ul></span><figure style='display: flex; flex-direction: column;'><img src='https://images.pexels.com/photos/86596/owl-bird-eyes-eagle-owl-86596.jpeg' style='width: 300px;height: 300px' /><figcaption style='color: var(--muted-foreground); text-align: center; margin-top: 0.5rem;'>owl</figcaption></figure></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "bkHC",
+      "code_hash": "03c452dc273514cb32fc5cc06b3df034",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"the-heirarchical-model\">The Heirarchical Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>1963: Rockwell Int'l requests part tracking system from IBM for Apollo program</li>\n<li>\n<span class=\"paragraph\">1965: Berman (IBM) and Nordyke (Rockwell) develop Disk Applications in a Teleprocessing Environment (DATE)</span>\n<ul>\n<li>Decouple disk access from applications which execute queries against data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">1968: Information Control System/Data Language Interface (ICS/DL/I) begins operating</span>\n<ul>\n<li>Sold as Information Management System (IMS) and still <a href=\"https://www.ibm.com/products/ims\" rel=\"noopener noreferrer\" target=\"_blank\">available for purchase</a></li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\">Sources: IBM (<a href=\"https://www.ibm.com/history/information-management-system\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>, <a href=\"www.ibm.com/docs/en/zos-basic-skills?topic=now-history-ims-beginnings-nasa\">2</a>), Computer History Museum (<a href=\"https://www.computerhistory.org/collections/catalog/500001032\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>)</span></span></div></div><div style='flex: 0.35'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><div class=\"language-text codehilite\"><pre><span></span><code>Rocket\n\u251c\u2500\u2500 Engine\n\u2502   \u251c\u2500\u2500 #4-40 Screw\n\u2502   \u2502   \u2514\u2500\u2500 QTY: 5\n\u2502   \u2514\u2500\u2500 #4-40 Nut\n\u2502       \u2514\u2500\u2500 QTY: 5\n\u2514\u2500\u2500 Fuel Tank\n    \u251c\u2500\u2500 #4-40 Screw\n    \u2502   \u2514\u2500\u2500 QTY: 2\n    \u2514\u2500\u2500 #4-40 Nut\n        \u2514\u2500\u2500 QTY: 3\n</code></pre></div>\nRocket BOM for demonstration purposes only</span></span></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "lEQa",
+      "code_hash": "9242cebf9028351b39b06c429bbaf547",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"the-relational-model\">The Relational Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">1970: Edgar Codd (IBM) publishes mathematical formalism of relational model for databases to escape constraints of heirarchical model (<a href=\"https://dl.acm.org/doi/10.1145/362384.362685\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>, <a href=\"https://www.ibm.com/history/relational-database\" rel=\"noopener noreferrer\" target=\"_blank\">2</a>)</span>\n<ul>\n<li>Store data in relational tables, identify rows with \"keys\", operations to query data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">1974: Structured English Query Language (SEQUEL) developed by Bryce (IBM) and Chamberlin (IBM) (<a href=\"https://dl.acm.org/doi/10.1145/800296.811515\" rel=\"noopener noreferrer\" target=\"_blank\">3</a>)</span>\n<blockquote>\n<span class=\"paragraph\">...identify the basic functions that are required by database users and develop a simple and consistent set of rules for applying thse functions to data.</span>\n</blockquote>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><table>\n<thead>\n<tr>\n<th>EMP</th>\n<th>NAME</th>\n<th>SAL</th>\n<th>MGR</th>\n<th>DEPT</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td>SMITH</td>\n<td>10000</td>\n<td>JONES</td>\n<td>TOY</td>\n</tr>\n<tr>\n<td></td>\n<td>JONES</td>\n<td>12000</td>\n<td>ANDERSON</td>\n<td>FURNITURE</td>\n</tr>\n<tr>\n<td></td>\n<td>LEE</td>\n<td>10000</td>\n<td>THOMAS</td>\n<td>APPLIANCES</td>\n</tr>\n</tbody>\n</table></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-text codehilite\"><pre><span></span><code>SELECT NAME\nFROM   EMP\nWHERE  DEPT = &#39;TOY&#39;\n</code></pre></div></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: center;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The Original SQL Query</span></span></div></div></div></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "PKri",
+      "code_hash": "669ebe9f722810e10d8d0cf92a87aac0",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"entity-relationship-model\">Entity-Relationship Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>1976: Peter Chen (MIT) publishes entity-relationship (ER) model (<a href=\"https://dl.acm.org/doi/10.1145/320434.320440\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>)</li>\n<li>\n<span class=\"paragraph\">Specified three categories of relationships between \"entities\" (i.e. nouns):</span>\n<ul>\n<li><marimo-tex class=\"arithmatex\">||(1:1||)</marimo-tex> \"one-to-one\"</li>\n<li><marimo-tex class=\"arithmatex\">||(1:n||)</marimo-tex> \"one-to-many\"</li>\n<li><marimo-tex class=\"arithmatex\">||(n:m||)</marimo-tex> \"many-to-many\"</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Extremely useful abstraction for reasoning about how real-world data is structured</span>\n<ul>\n<li>Can derive heirarchical, relational models, or others</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.4'><img src='./@file/26478-1963511-HVD1bwGM.png' /></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "SFPL",
+      "code_hash": "c47c61c992343d6ed953c99fbc461695",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"lz-service-management\">LZ Service Management</h2>\n<span class=\"paragraph\">Users in LZ often have multiple kinds of accounts for various services: gitlab, NERSC, online, slack, email, twiki.</span></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li><marimo-tex class=\"arithmatex\">||(1:1||)</marimo-tex>: One user has <strong>one</strong> name, and one name identifies(?) <strong>one</strong> user </li>\n<li>\n<span class=\"paragraph\"><marimo-tex class=\"arithmatex\">||(1:n||)</marimo-tex>: One account belongs to <strong>one</strong> user, and one user can have <strong>many</strong> accounts</span>\n<ul>\n<li>Sometimes users have multiple accounts with a single service (e.g. email)!</li>\n</ul>\n</li>\n<li><marimo-tex class=\"arithmatex\">||(n:m||)</marimo-tex>: One user can access <strong>many</strong> services, and services can have <strong>many</strong> users</li>\n</ul></span></div></div><div style='flex: 0.35'><marimo-ui-element object-id='SFPL-0' random-id='717217cb-62fc-de9d-61cc-e24df41b4694'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;alice1@hotmail.com, alice2@gmail.com&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:&#92;&quot;1337alice&#92;&quot;,&#92;&quot;nersc&#92;&quot;:NaN},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bob&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;bob1@gmail.com&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:NaN,&#92;&quot;nersc&#92;&quot;:&#92;&quot;bobg&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;charlie@yahoo.com, charlie@stanford.edu&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:&#92;&quot;hacker_charlie&#92;&quot;,&#92;&quot;nersc&#92;&quot;:&#92;&quot;charliew&#92;&quot;}]&quot;' data-total-rows='3' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;email&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;gitlab&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;nersc&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "BYtC",
+      "code_hash": "6a8e2d0ec1789f3a370ae5c8c3e4c9fa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"dont-try-this-at-home\">Don't Try This At Home</h2>\n<span class=\"paragraph\">What's wrong with this?</span></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">New services require new columns (can mean downtime for a database)</span>\n<ul>\n<li>Data on services is embedded in column names</li>\n</ul>\n</li>\n<li>Awkward for users with multiple accounts on same service</li>\n<li>Hard to query \"all users of a service\" or \"all services for a user\"</li>\n<li>Users can change names, or share names</li>\n</ul></span></div></div><div style='flex: 0.35'><marimo-ui-element object-id='BYtC-0' random-id='b0fdf4a1-ae96-38aa-68c9-e7b546f017bb'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;alice1@hotmail.com, alice2@gmail.com&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:&#92;&quot;1337alice&#92;&quot;,&#92;&quot;nersc&#92;&quot;:NaN},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bob&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;bob1@gmail.com&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:NaN,&#92;&quot;nersc&#92;&quot;:&#92;&quot;bobg&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;charlie@yahoo.com, charlie@stanford.edu&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:&#92;&quot;hacker_charlie&#92;&quot;,&#92;&quot;nersc&#92;&quot;:&#92;&quot;charliew&#92;&quot;}]&quot;' data-total-rows='3' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;email&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;gitlab&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;nersc&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "RGSE",
+      "code_hash": "49e5b8284c043018c5641f5983bae99b",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"approaches-to-data-transformation\">Approaches to Data Transformation</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">Imperative programming: high probability of reinventing the wheel with nested loops</span>\n<ul>\n<li>Please don't use plain python for this (unless using <a href=\"https://numba.pydata.org/\" rel=\"noopener noreferrer\" target=\"_blank\">numba</a>)</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Arrays (e.g. <code>numpy</code>, <code>awkward</code>): situationally great but best for numerical workloads</span>\n<ul>\n<li>N.B. <code>pandas</code> is/was a fancy wrapper around <code>numpy</code></li>\n</ul>\n</li>\n<li>Databases &amp; Dataframes: lots of convenient functions for cleaning, querying, restructuring data</li>\n</ul></span></div></div><div style='flex: 0.4'><marimo-mermaid data-diagram='&quot;&#92;n%%{init: {&#x27;theme&#x27;: &#x27;neutral&#x27;} }%%&#92;ngraph TD&#92;n    IMP[**Imperative Programming**&lt;br&gt;Manual &amp; Procedural]&#92;n    NP[**Arrays**&lt;br&gt;Vectorized &amp; Positional]&#92;n    DF[**Databases &amp; Dataframes**&lt;br&gt;Vectorized &amp; Semantic]&#92;n&#92;n    IMP --&gt; NP&#92;n    NP --&gt; DF&#92;n&#92;n    style DF fill:#d4edda,stroke:#28a745,stroke-width:2px&#92;n    style NP fill:#fff3cd,stroke:#ffc107,stroke-width:2px&#92;n    style IMP fill:#f8d7da,stroke:#dc3545,stroke-width:2px&#92;n&#92;n    linkStyle 0,1 stroke-width:2px;&#92;n&quot;'></marimo-mermaid></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Kclp",
+      "code_hash": "e8acefa9ff8b3fb76397562e74e755a8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='Kclp-0' random-id='e328428e-8cfc-541f-663e-aae88152623f'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;email&#92;&quot;:[&#92;&quot;alice1@hotmail.com&#92;&quot;,&#92;&quot;alice2@gmail.com&#92;&quot;],&#92;&quot;gitlab&#92;&quot;:&#92;&quot;1337alice&#92;&quot;,&#92;&quot;nersc&#92;&quot;:NaN},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bob&#92;&quot;,&#92;&quot;email&#92;&quot;:[&#92;&quot;bob1@gmail.com&#92;&quot;],&#92;&quot;gitlab&#92;&quot;:NaN,&#92;&quot;nersc&#92;&quot;:&#92;&quot;bobg&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;email&#92;&quot;:[&#92;&quot;charlie@yahoo.com&#92;&quot;,&#92;&quot;charlie@stanford.edu&#92;&quot;],&#92;&quot;gitlab&#92;&quot;:&#92;&quot;hacker_charlie&#92;&quot;,&#92;&quot;nersc&#92;&quot;:&#92;&quot;charliew&#92;&quot;}]&quot;' data-total-rows='3' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;email&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;gitlab&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;nersc&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "emfo",
+      "code_hash": "c67c20ab40ac7229b7c9917d32903e93",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='emfo-0' random-id='35828579-1b36-40f7-b41f-6d82e02b9f0c'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;alice1@hotmail.com&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:&#92;&quot;1337alice&#92;&quot;,&#92;&quot;nersc&#92;&quot;:NaN},{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;alice2@gmail.com&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:&#92;&quot;1337alice&#92;&quot;,&#92;&quot;nersc&#92;&quot;:NaN},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bob&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;bob1@gmail.com&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:NaN,&#92;&quot;nersc&#92;&quot;:&#92;&quot;bobg&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;charlie@yahoo.com&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:&#92;&quot;hacker_charlie&#92;&quot;,&#92;&quot;nersc&#92;&quot;:&#92;&quot;charliew&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;email&#92;&quot;:&#92;&quot;charlie@stanford.edu&#92;&quot;,&#92;&quot;gitlab&#92;&quot;:&#92;&quot;hacker_charlie&#92;&quot;,&#92;&quot;nersc&#92;&quot;:&#92;&quot;charliew&#92;&quot;}]&quot;' data-total-rows='5' data-total-columns='4' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;email&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;gitlab&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;nersc&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='false' data-show-data-types='true' data-show-page-size-selector='false' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Hstk",
+      "code_hash": "7f31e2afafc84cf848a8cb3724ce9275",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/plain": ""
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nWHF",
+      "code_hash": "24aed6de66a7055a8ae6bd60d06c32ca",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<marimo-ui-element object-id='nWHF-0' random-id='47274d3a-e543-afc0-419c-b57aebc649be'><marimo-table data-initial-value='[]' data-label='null' data-data='&quot;[{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;gitlab&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;1337alice&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;gitlab&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;1337alice&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bob&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;gitlab&#92;&quot;,&#92;&quot;account_name&#92;&quot;:NaN},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;gitlab&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;hacker_charlie&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;gitlab&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;hacker_charlie&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;email&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;alice1@hotmail.com&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Alice&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;email&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;alice2@gmail.com&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Bob&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;email&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;bob1@gmail.com&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;email&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;charlie@yahoo.com&#92;&quot;},{&#92;&quot;name&#92;&quot;:&#92;&quot;Charlie&#92;&quot;,&#92;&quot;service_name&#92;&quot;:&#92;&quot;email&#92;&quot;,&#92;&quot;account_name&#92;&quot;:&#92;&quot;charlie@stanford.edu&#92;&quot;}]&quot;' data-total-rows='15' data-total-columns='3' data-max-columns='50' data-banner-text='&quot;&quot;' data-pagination='true' data-page-size='10' data-field-types='[[&quot;name&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;service_name&quot;,[&quot;string&quot;,&quot;object&quot;]],[&quot;account_name&quot;,[&quot;string&quot;,&quot;object&quot;]]]' data-show-filters='true' data-show-download='true' data-show-column-summaries='true' data-show-data-types='true' data-show-page-size-selector='true' data-show-column-explorer='true' data-show-chart-builder='true' data-row-headers='[]' data-has-stable-row-id='false' data-lazy='false' data-preload='false'></marimo-table></marimo-ui-element>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "iLit",
+      "code_hash": "9df9a8d40d7406c95971567cc0a736fe",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.5'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"try-this-instead\">Try This Instead</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Avoids a common pitfall: <marimo-tex class=\"arithmatex\">||(m:n||)</marimo-tex> relationships require \"junction\" tables</li>\n<li>Organizing into separate tables is called <a href=\"https://en.wikipedia.org/wiki/Database_normalization\" rel=\"noopener noreferrer\" target=\"_blank\">\"normalization\"</a></li>\n<li><a href=\"https://www.splunk.com/en_us/blog/learn/data-normalization.html\" rel=\"noopener noreferrer\" target=\"_blank\">Third Normal Form (3NF)</a>: One value per cell, every row unique, keys and non-keys are <a href=\"https://en.wikipedia.org/wiki/Bijection\" rel=\"noopener noreferrer\" target=\"_blank\">bijective</a></li>\n<li>You just need to map <code>id</code> to meaningful values (\"denormalize\")</li>\n</ul></span></div></div><div style='flex: 0.2'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><table>\n<thead>\n<tr>\n<th>user_id</th>\n<th>user_name</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Alice</td>\n</tr>\n<tr>\n<td>2</td>\n<td>Bob</td>\n</tr>\n<tr>\n<td>3</td>\n<td>Charlie</td>\n</tr>\n</tbody>\n</table></span><span class=\"markdown prose dark:prose-invert contents\"><table>\n<thead>\n<tr>\n<th>service_id</th>\n<th>service_name</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>Email</td>\n</tr>\n<tr>\n<td>2</td>\n<td>GitLab</td>\n</tr>\n<tr>\n<td>3</td>\n<td>NERSC</td>\n</tr>\n</tbody>\n</table></span></div></div><div style='flex: 0.25'><span class=\"markdown prose dark:prose-invert contents\"><table>\n<thead>\n<tr>\n<th>user_id</th>\n<th>service_id</th>\n<th>account_name</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td>1</td>\n<td>1</td>\n<td><a href=\"&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#108;&#105;&#99;&#101;&#49;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;\">&#97;&#108;&#105;&#99;&#101;&#49;&#64;&#104;&#111;&#116;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>\n</tr>\n<tr>\n<td>1</td>\n<td>1</td>\n<td><a href=\"&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#97;&#108;&#105;&#99;&#101;&#50;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;\">&#97;&#108;&#105;&#99;&#101;&#50;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>\n</tr>\n<tr>\n<td>1</td>\n<td>2</td>\n<td>1337alice</td>\n</tr>\n<tr>\n<td>2</td>\n<td>1</td>\n<td><a href=\"&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#98;&#111;&#98;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;\">&#98;&#111;&#98;&#49;&#64;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#109;</a></td>\n</tr>\n<tr>\n<td>2</td>\n<td>3</td>\n<td>bobg</td>\n</tr>\n<tr>\n<td>3</td>\n<td>1</td>\n<td><a href=\"&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#104;&#97;&#114;&#108;&#105;&#101;&#64;&#121;&#97;&#104;&#111;&#111;&#46;&#99;&#111;&#109;\">&#99;&#104;&#97;&#114;&#108;&#105;&#101;&#64;&#121;&#97;&#104;&#111;&#111;&#46;&#99;&#111;&#109;</a></td>\n</tr>\n<tr>\n<td>3</td>\n<td>1</td>\n<td><a href=\"&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#99;&#104;&#97;&#114;&#108;&#105;&#101;&#46;&#119;&#111;&#114;&#107;&#64;&#99;&#111;&#114;&#112;&#46;&#99;&#111;&#109;\">&#99;&#104;&#97;&#114;&#108;&#105;&#101;&#46;&#119;&#111;&#114;&#107;&#64;&#99;&#111;&#114;&#112;&#46;&#99;&#111;&#109;</a></td>\n</tr>\n<tr>\n<td>3</td>\n<td>2</td>\n<td>hacker_charlie</td>\n</tr>\n<tr>\n<td>3</td>\n<td>3</td>\n<td>charliew</td>\n</tr>\n</tbody>\n</table></span></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ROlb",
+      "code_hash": "0406da42d8c13ecded299764733a1db3",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: flex-start;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"realities-of-data-management\">Realities of Data Management</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Modeling: \"Should this be in one column, multiple columns, or a separate table?\"</li>\n<li>Transformation: \"How can I reshape and modify my data and get it ready for analysis?\"</li>\n<li>ACID compliance</li>\n<li>Replication: \"Can we have another copy for performance/redunancy?\"</li>\n<li>Volume: \"What if my data doesn't fit in RAM? Or on disk? Or on one machine?\"</li>\n</ul></span></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "qnkX",
+      "code_hash": "b745f78f1ef9af82fbd7bc3d2b902a14",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"sql-databases\">SQL Databases</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Store data in rows (\"records\"), rows live in tables, tables live in databases</li>\n<li>Some systems implement \"catalogs\" which house multiple databases</li>\n<li>\n<span class=\"paragraph\">\"NoSQL\" databases also exist! (see backup)</span>\n<ul>\n<li>Highly optimized for non-tabluar data (e.g. vector stores, graphs)</li>\n<li>Special mention: \"Document\" databases (store JSON-like data) have lost ground to SQL DBs which can handle JSON-like data</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><marimo-mermaid data-diagram='&quot;&#92;ngraph BT&#92;n    Catalog[**Catalog**&lt;br&gt;Corporation]&#92;n&#92;n    DB1[(**Database**&lt;br&gt;Subsidiary 1)]&#92;n    DB2[(**Database**&lt;br&gt;Subsidiary 2)]&#92;n&#92;n    Table1[**Table**&lt;br&gt;Orders]&#92;n    Table2[**Table**&lt;br&gt;Customers]&#92;n&#92;n    Row1(**Row 1**)&#92;n    Row2(**Row 2**)&#92;n    Row3(**Row 3**)&#92;n&#92;n    Catalog --&gt; DB1&#92;n    Catalog --&gt; DB2&#92;n&#92;n    DB1 --&gt; Table1&#92;n    DB1 --&gt; Table2&#92;n&#92;n    DB2 ~~~ Table1&#92;n    DB2 ~~~ Table2&#92;n&#92;n    Table1 --&gt; Row1&#92;n    Table1 --&gt; Row2&#92;n    Table1 --&gt; Row3&#92;n&#92;n    Table2 ~~~ Row1&#92;n    Table2 ~~~ Row2&#92;n    Table2 ~~~ Row3&#92;n&quot;'></marimo-mermaid></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TqIu",
+      "code_hash": "f342942a6574981899caa3e7b3a5bc06",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.65'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"acid-compliance\">ACID Compliance</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Atomicity: all operations in a transaction complete, or none of them do</li>\n<li>Concistency: validation mechanisms and constraints, e.g \"Why is this phone number 13 digits?\"</li>\n<li>Isolation: handle concurrent updates to the same data</li>\n<li>Durability: changes should be saved to non-volatile memory to resist crashes/corruption</li>\n</ul></span></div></div><div style='flex: 0.3'><marimo-mermaid data-diagram='&quot;&#92;n%%{&#92;n  init: {&#92;n    &#x27;themeVariables&#x27;: {&#92;n      &#x27;fontSize&#x27;: &#x27;50px&#x27;&#92;n    }&#92;n  }&#92;n}%%&#92;nflowchart TB&#92;n&#92;nA[&#92;&quot;Atomicity &lt;br&gt; \ud83e\udde9&#92;&quot;]&#92;nC[&#92;&quot;Concistency &lt;br&gt; \u2705&#92;&quot;]&#92;nI[&#92;&quot;Isolation &lt;br&gt; \ud83d\udd12&#92;&quot;]&#92;nD[&#92;&quot;Durability &lt;br&gt; \ud83d\udc8e&#92;&quot;]&#92;n&#92;nA~~~C &#92;nI~~~D&#92;n&quot;'></marimo-mermaid></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Vxnm",
+      "code_hash": "143595b430e6b2b5ae9e344b9e77d806",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.35'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"data-replication\">Data Replication</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">Sometimes you need another copy of your data</span>\n<ul>\n<li>If too many people need access</li>\n<li>If regulations require storage in multiple geographic regions</li>\n<li>For redundancy/backups</li>\n</ul>\n</li>\n<li>Databases have declarative configurations for replication</li>\n</ul></span></div></div><div style='flex: 0.6'><marimo-mermaid data-diagram='&quot;&#92;ngraph TB&#92;n    subgraph &#92;&quot;US Region&#92;&quot;&#92;n        US_APP[Application]&#92;n        US_DB[(Primary Database&lt;br/&gt;Read/Write)]&#92;n    end&#92;n&#92;n    subgraph &#92;&quot;EU Region&#92;&quot;&#92;n        EU_APP[Application]&#92;n        EU_DB[(Replica Database&lt;br/&gt;Read-Only&lt;br/&gt;&lt;br/&gt;GDPR Compliance:&lt;br/&gt;EU citizen data&lt;br/&gt;stays in EU)]&#92;n    end&#92;n&#92;n    subgraph &#92;&quot;Asia Region&#92;&quot;&#92;n        ASIA_APP[Application]&#92;n        ASIA_DB[(Replica Database&lt;br/&gt;Read-Only&lt;br/&gt;&lt;br/&gt;Low latency&lt;br/&gt;for local users)]&#92;n    end&#92;n&#92;n    US_APP --&gt;|Write| US_DB&#92;n    US_APP --&gt;|Read| US_DB&#92;n&#92;n    US_DB -.-&gt;|Replication| EU_DB&#92;n    US_DB -.-&gt;|Replication| ASIA_DB&#92;n&#92;n    EU_APP --&gt;|Read| EU_DB&#92;n    EU_APP -.-&gt;|Write requests| US_DB&#92;n&#92;n    ASIA_APP -.-&gt;|Write requests| US_DB&#92;n    ASIA_APP --&gt;|Read| ASIA_DB&#92;n&quot;'></marimo-mermaid></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "DnEU",
+      "code_hash": "41aa7823e71d8f08c42a5e09cf6e786f",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.45'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"data-volume\">Data Volume</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Sometimes you have gigabytes/terabytes/petabytes of data</li>\n<li>Offload work to the database: save battery life and move less data across a network</li>\n<li>What if your data doesn't fit into RAM or on your hard drive(s)?</li>\n<li>\n<span class=\"paragraph\">Databases can easily query data on disk, let alone in RAM</span>\n<ul>\n<li>Ran out of disk? Distributing (\"sharding\") across multiple machines is hard (for anything, not just DBs) but possible</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.5'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><marimo-mermaid data-diagram='&quot;&#92;ngraph TD&#92;n    A[(Table 1&lt;br&gt;Table 2&lt;br&gt;Table 3&lt;br&gt;Monolith Database&lt;br&gt;)] --&gt; B[(Table 1.1.1...15&lt;br&gt;Table 2.1.1...15&lt;br&gt;Table 3.1.1...15&lt;br&gt;Physical Database 3)]&#92;n    A --&gt; C[(Table 1.2.1...15&lt;br&gt;Table 2.2.1...15&lt;br&gt;Table 3.2.1...15&lt;br&gt;Physical Database 2)]&#92;n    A --&gt; D[(Table 1.3.1...15&lt;br&gt;Table 2.3.1...15&lt;br&gt;Table 3.3.1...15&lt;br&gt;Physical Database 3)]&#92;n&quot;'></marimo-mermaid><div style='display: flex;flex: 1;flex-direction: row;justify-content: center;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Sharding case study at <a href=\"https://www.notion.com/blog/sharding-postgres-at-notion\" rel=\"noopener noreferrer\" target=\"_blank\">Notion</a></span></span></div></div></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ecfG",
+      "code_hash": "8f008ceb792281aab127ad56be9fe156",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.4'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"row-oriented-database\">Row-Oriented Database</h3></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Optimized for access to all information in a row</li>\n<li>\n<span class=\"paragraph\">Great for reading or writing to individual rows</span>\n<ul>\n<li>AKA \"transactional\" workloads where you need information on a specific record</li>\n</ul>\n</li>\n<li>e.g. PostgreSQL, MySQL</li>\n</ul></span></div></div><div style='flex: 0.6'><figure style='display: flex; flex-direction: column;'><img src='./@file/42107-1963511-IdHEdWDr.svg' /><figcaption style='color: var(--muted-foreground); text-align: center; margin-top: 0.5rem;'><a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a></figcaption></figure></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Pvdt",
+      "code_hash": "b5a15d4fc54eb93d3a6e2fbc0977c48a",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.4'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"column-oriented-database\">Column-Oriented Database</h3></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Optimized for access to all information in a column</li>\n<li>\n<span class=\"paragraph\">Great for reading about multiple records at once</span>\n<ul>\n<li>AKA \"analytical\" workloads where you only need specific columns</li>\n</ul>\n</li>\n<li>e.g Clickhouse, DuckDB </li>\n</ul></span></div></div><div style='flex: 0.6'><figure style='display: flex; flex-direction: column;'><img src='./@file/50690-1963511-sfmHVuDP.svg' /><figcaption style='color: var(--muted-foreground); text-align: center; margin-top: 0.5rem;'><a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a></figcaption></figure></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZBYS",
+      "code_hash": "1c97dc5919b50d97c250a60a986d8218",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"drawbacks\">Drawbacks</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">Data models and schemas can be challenging to manage</span>\n<ul>\n<li>But you'll have to manage them eventually...</li>\n</ul>\n</li>\n<li>Databases require serious infrastructure support e.g. networking, containers/virtual machines...</li>\n<li>Different SQL dialects and features for different databases</li>\n<li>Less accessible than a simple filesystem (scary!)</li>\n</ul></span></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aLJB",
+      "code_hash": "9d4153de85ee46854c1edf87f3331026",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"data-lakehouse\">Data Lakehouse</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">\"Data Warehouse\": analytical database with cleaned and joined data ready for queries</span>\n<ul>\n<li>Pay for compute (expensive) and disk (cheap), overhead to maintain rigid schemas  </li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">\"Data Lake\": Filesystem with assorted, unprocessed files (e.g. <code>CSV</code>, <code>JSON</code>, images)</span>\n<ul>\n<li>Pay mostly for disk, compute what you need, no goverance--watch the mess grow</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">\"Data Lakehouse\": Filesystem with columnar file formats like <code>.parquet</code>, <code>.root</code></span>\n<ul>\n<li>Files are tracked and managed, then <em>metadata</em> is warehoused in a \"catalog\"</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><marimo-mermaid data-diagram='&quot;&#92;nflowchart TB&#92;n&#92;nWH[&#92;&quot;**90s-00s**&lt;br&gt;Data Warehouse&#92;&quot;]&#92;nDL[&#92;&quot;**2010s**&lt;br&gt;Data Lake&#92;&quot;]&#92;nLH[&#92;&quot;**2020s**&lt;br&gt;Data Lakehouse&#92;&quot;]&#92;n&#92;nWH--&gt;DL--&gt;LH&#92;n&quot;'></marimo-mermaid></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "nHfw",
+      "code_hash": "711ae4e1f028cb855db662de8ae9703e",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.4'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"data-lakehouse-concept\">Data Lakehouse Concept</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Query your catalog to find out which files you need </li>\n<li>Process files with an engine: ALPACA, DuckDB, <code>polars</code>...</li>\n<li>Similar cost to a data lake (catalog is <marimo-tex class=\"arithmatex\">||(~10^6||)</marimo-tex> smaller than data)</li>\n<li>Can support schemas and schema evolution, ACID</li>\n<li>Warehouse-like system scales \"easily\" to petabytes</li>\n<li>Drawbacks: still requires tuning, creates tons of (well-organized) files</li>\n</ul></span></div></div><div style='flex: 0.6'><marimo-mermaid data-diagram='&quot;&#92;nsequenceDiagram&#92;n    autonumber&#92;n    participant User&#92;n    participant Storage as Filesystem &lt;br&gt; (e.g. CFS)&#92;n    participant Catalog as Data&lt;br&gt;Catalog&#92;n&#92;n    User-&gt;&gt;Catalog: SELECT path FROM files&lt;br&gt;WHERE run in (1234)&#92;n    Catalog-&gt;&gt;User: File list: [file1.root, file2.root]&#92;n    loop For each file&#92;n        User-&gt;&gt;Storage: Get events from file&#92;n        loop For each event&#92;n            User-&gt;&gt;Storage: Process event&#92;n        end&#92;n    end&#92;n&#92;n&quot;'></marimo-mermaid></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "AjVT",
+      "code_hash": "ac09405899e5f5ab53af3316d4e90374",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"summary-how-can-sql-databases-help\">Summary: How can SQL databases help?</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>ACID compliance for reliability</li>\n<li>Replication for safety/availability</li>\n<li>Scalable for large volumes of data</li>\n<li>Highly compatible with data modeling and transformations</li>\n<li>Handle computation and move less data across a network</li>\n</ul></span><marimo-callout-output data-html='&quot;&lt;span&gt;\u2139\ufe0f Subsets of these apply to NoSQL databases&lt;/span&gt;&quot;' data-kind='&quot;info&quot;'></marimo-callout-output></div></div>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "pHFh",
+      "code_hash": "7755f17d8d530da3f9a0b38871f9c858",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.45'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"takeaways\">Takeaways</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">Good data modeling can make analysis more flexible</span>\n<ul>\n<li>Don't be afraid to make more tables!</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Databases can do many transformations</span>\n<ul>\n<li>Dataframes can do even more</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">SQL isn't going anywhere</span>\n<ul>\n<li>Dataframes are a great way to pick up concepts</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.55'><marimo-callout-output data-html='&quot;&lt;span&gt;\u2705 Local engines like DuckDB+ibis, or `polars` are outstanding for querying multiple `.parquet` files on a single node.&lt;/span&gt;&quot;' data-kind='&quot;success&quot;'></marimo-callout-output></div></div>"
+          }
+        }
+      ],
+      "console": []
+    }
+  ]
+}
