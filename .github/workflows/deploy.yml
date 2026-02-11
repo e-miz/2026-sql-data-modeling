@@ -5,13 +5,14 @@ on:
 
 jobs:
     build:
-        runs-on: ubuntu-latest
+        runs-on: ghcr.io/prefix-dev/pixi:latest
 
         steps:
             # ... checkout and install dependencies
 
             - name: 📄 Export notebook
               run: |
+                  eval "$(pixi shell-hook)"
                   marimo export html-wasm 2026-sql-data-modeling.py -o site --mode edit -f --no-sandbox
 
             - name: 📦 Upload Pages Artifact
