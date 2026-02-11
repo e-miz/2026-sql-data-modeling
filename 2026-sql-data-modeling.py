@@ -134,7 +134,7 @@ def _():
 
     _cap = mo.center(mo.md("The Original SQL Query"))
 
-    _col2_2 = mo.vstack([_query,_cap])
+    _col2_2 = mo.vstack([_query, _cap])
 
     mo.hstack([mo.vstack([_title, _col1]), mo.vstack([_col2_1, _col2_2])], align="center", widths=[0.60, 0.35])
     return
@@ -219,9 +219,10 @@ def _():
     _col1 = mo.md(r"""
     - Imperative programming: high probability of reinventing the wheel with nested loops
       - Please don't use plain python for this (unless using [numba](https://numba.pydata.org/))
-    - Arrays (e.g. `numpy`, `awkward`): situationally great but best for numerical workloads
+    - Arrays (e.g. `numpy`, `awkward`): great for "low-level" operations
       - N.B. `pandas` is/was a fancy wrapper around `numpy`
     - Databases & Dataframes: lots of convenient functions for cleaning, querying, restructuring data
+      - Can still use [`ufuncs`](https://numpy.org/doc/stable/reference/ufuncs.html) (universal functions) with little overhead
     """)
 
     _col2 = mo.mermaid("""
@@ -247,9 +248,37 @@ def _():
 
 @app.cell
 def _():
-    split_user_data = user_data.assign(email=user_data["email"].str.split(", "))
-    split_user_data
+    split_user_data_code = mo.ui.code_editor(
+        """split_user_data = user_data.assign(email=user_data["email"].str.split(". "))"""
+    )
+
+    run_button = mo.ui.button(label="Run")
+    return run_button, split_user_data_code
+
+
+@app.cell
+def _(split_user_data_code):
+    _ns = dict(globals())
+    exec(split_user_data_code.value, _ns)
+    split_user_data = _ns.get("split_user_data")
     return (split_user_data,)
+
+
+@app.cell
+def _(run_button, split_user_data, split_user_data_code):
+    _title = mo.md("""## Step 1: Split User Data""")
+
+    _col1_1 = mo.md("""
+    - We have a comma-separated list in the e-mail column
+    - Let's override it with a new one that makes it into a column of lists
+    """)
+
+    _col1 = mo.vstack([_col1_1, run_button])
+
+    _col2 = mo.vstack([split_user_data_code, split_user_data])
+
+    mo.hstack([mo.vstack([_title, _col1]), _col2], align="center", widths=[0.45, 0.60])
+    return
 
 
 @app.cell
@@ -509,7 +538,7 @@ def _():
 
     _cap1 = mo.md("""Sharding case study at [Notion](https://www.notion.com/blog/sharding-postgres-at-notion)""")
 
-    _col2 = mo.vstack([_fig1,mo.center(_cap1)])
+    _col2 = mo.vstack([_fig1, mo.center(_cap1)])
 
     mo.hstack([mo.vstack([_title, _col1]), _col2], align="center", widths=[0.45, 0.50])
     return
@@ -574,7 +603,10 @@ def _():
     - Data models and schemas can be challenging to manage
     """)
 
-    _col2 = mo.callout("⚠️ You will need to manage your schema eventually! Downstream management is good for flexibility but bad for concistency.", "warn")
+    _col2 = mo.callout(
+        "⚠️ You will need to manage your schema eventually! Downstream management is good for flexibility but bad for concistency.",
+        "warn",
+    )
 
     mo.vstack([_title, mo.hstack([_col1, _col2])])
     return
@@ -602,7 +634,7 @@ def _():
     WH-->DL-->LH
     """)
 
-    mo.hstack([mo.vstack([_title, _col1]), _col2], align="center", widths=[0.6,0.35])
+    mo.hstack([mo.vstack([_title, _col1]), _col2], align="center", widths=[0.6, 0.35])
     return
 
 
@@ -678,9 +710,12 @@ def _():
       - Dataframes are a great way to pick up concepts
     """)
 
-    _col2 = mo.callout("✅ Local engines like DuckDB+ibis, or `polars` are outstanding for querying multiple `.parquet` files on a single node.", "success")
+    _col2 = mo.callout(
+        "✅ Local engines like DuckDB+ibis, or `polars` are outstanding for querying multiple `.parquet` files on a single node.",
+        "success",
+    )
 
-    mo.hstack([mo.vstack([_title, _col1]), _col2], widths=[0.45,0.55])
+    mo.hstack([mo.vstack([_title, _col1]), _col2], widths=[0.45, 0.55])
     return
 
 
