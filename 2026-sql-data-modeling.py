@@ -347,7 +347,7 @@ def _():
 @app.cell(hide_code=True)
 def _():
     _title = mo.md("## Realities of Data Management")
-    _content = mo.md("""
+    _col1 = mo.md("""
     - Modeling: "Should this be in one column, multiple columns, or a separate table?"
     - Transformation: "How can I reshape and modify my data and get it ready for analysis?"
     - ACID compliance
@@ -355,8 +355,9 @@ def _():
     - Volume: "What if my data doesn't fit in RAM? Or on disk? Or on one machine?"
     """)
 
-    _col = mo.vstack(items=[_title, _content], align="start", justify="start")
-    _col
+    _col2 = mo.callout("ℹ️ See backup for more; these are most related to SQL DBs", "info")
+
+    mo.vstack([_title, mo.hstack([_col1, _col2])])
     return
 
 
@@ -567,14 +568,15 @@ def _():
     _title = mo.md("""## Drawbacks""")
 
     _col1 = mo.md(r"""
-    - Data models and schemas can be challenging to manage
-      - But you'll have to manage them eventually...
     - Databases require serious infrastructure support e.g. networking, containers/virtual machines...
     - Different SQL dialects and features for different databases
-    - Less accessible than a simple filesystem (scary!)
+    - Less accessible than a simple filesystem (can be scary)
+    - Data models and schemas can be challenging to manage
     """)
 
-    mo.vstack([_title, mo.hstack([_col1])])
+    _col2 = mo.callout("⚠️ You will need to manage your schema eventually! Downstream management is good for flexibility but bad for concistency.", "warn")
+
+    mo.vstack([_title, mo.hstack([_col1, _col2])])
     return
 
 

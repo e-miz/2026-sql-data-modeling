@@ -5,6 +5,123 @@
   },
   "cells": [
     {
+      "id": "vblA",
+      "code_hash": "d3839795b0adea64ef58fbf0a1191c79",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">A Brief History of</span>\n<h1 id=\"data-modeling\">Data Modeling</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "Xref",
+      "code_hash": "55fa7a742d8f1e76464da43b48e42427",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">An Example of</span>\n<h1 id=\"data-transformation\">Data Transformation</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ZHCJ",
+      "code_hash": "4901149fed37ed7d2ad55648b4812b59",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Living the</span>\n<h1 id=\"sql-dream\">SQL DREAM<sup id=\"fnref:2-1\"><a class=\"footnote-ref\" href=\"#fn:2-1\">1</a></sup></h1>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:2-1\">Databases Rule Everything Around Me&#160;<a class=\"footnote-backref\" href=\"#fnref:2-1\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></li>\n</ol>\n</div></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "ulZA",
+      "code_hash": "4c562ea1b9932726434561bb7e97c609",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"types-of-sql-databases\">Types of SQL Databases</h2>\n<ul>\n<li>Row-oriented (transactional)</li>\n<li>\n<span class=\"paragraph\">Columnar (analytical)</span>\n<ul>\n<li>Lakehouse</li>\n</ul>\n</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "xXTn",
+      "code_hash": "a7c8da4ac08787deb9bf1096e4720ec8",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"closing-thoughts\">Closing Thoughts</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "NCOB",
+      "code_hash": "70fc76b666cfdbbeba8f9755a47594e5",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"next-time\">Next Time?</h2>\n<ul>\n<li>\n<span class=\"paragraph\">LZ Metadata Databases</span>\n<ul>\n<li>The Fate of the LZ Run DB Viewer</li>\n</ul>\n</li>\n<li>Advanced queries with ibis: more joins, gaps and islands, ranking, aggregations</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "aqbW",
+      "code_hash": "b150d310532541c583fbce57d6582420",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"backup\">Backup</h1></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TRpd",
+      "code_hash": "8f3c28f8de66ee0538116b839dd3de35",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"nosql-databases\">NoSQL Databases</h2>\n<ul>\n<li>Vector: embed everything in a vector space, do similarity searches.</li>\n<li>Document: basically JSON, store hierarchical data</li>\n<li>Key-value: Lots of key-value pairs. Fast lookup and retrieval</li>\n<li>Graph: lots of nodes and edges</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
+      "id": "TXez",
+      "code_hash": "22e1952afdd221265d31a80f1650d8aa",
+      "outputs": [
+        {
+          "type": "data",
+          "data": {
+            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"more-realities\">More Realities</h2>\n<ul>\n<li>Frequency: \"Can this change in 'real-time' I add or modify a new entry?\"</li>\n<li>Orchestration: \"How can we schedule these jobs and their dependencies?\"</li>\n<li>Sources and sinks: <code>.root</code>, <code>.xlsx</code>, <code>.parquet</code>, <code>.CSV</code>, <code>.json</code>, databases, APIs...</li>\n<li>Versioning: \"my_dataset_v34.csv\"</li>\n<li>Lineage: \"How did you create that column?\"</li>\n<li>Visualization: \"Can I get a dashboard for this?\"</li>\n</ul></span>"
+          }
+        }
+      ],
+      "console": []
+    },
+    {
       "id": "setup",
       "code_hash": "f9ec2f1c08d612874e9d5f86a943c986",
       "outputs": [
@@ -44,26 +161,13 @@
       "console": []
     },
     {
-      "id": "vblA",
-      "code_hash": "d3839795b0adea64ef58fbf0a1191c79",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">A Brief History of</span>\n<h1 id=\"data-modeling\">Data Modeling</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "bkHC",
-      "code_hash": "03c452dc273514cb32fc5cc06b3df034",
+      "code_hash": "0412ad734694acf580b1f08a236085d0",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"the-heirarchical-model\">The Heirarchical Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>1963: Rockwell Int'l requests part tracking system from IBM for Apollo program</li>\n<li>\n<span class=\"paragraph\">1965: Berman (IBM) and Nordyke (Rockwell) develop Disk Applications in a Teleprocessing Environment (DATE)</span>\n<ul>\n<li>Decouple disk access from applications which execute queries against data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">1968: Information Control System/Data Language Interface (ICS/DL/I) begins operating</span>\n<ul>\n<li>Sold as Information Management System (IMS) and still <a href=\"https://www.ibm.com/products/ims\" rel=\"noopener noreferrer\" target=\"_blank\">available for purchase</a></li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\">Sources: IBM (<a href=\"https://www.ibm.com/history/information-management-system\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>, <a href=\"www.ibm.com/docs/en/zos-basic-skills?topic=now-history-ims-beginnings-nasa\">2</a>), Computer History Museum (<a href=\"https://www.computerhistory.org/collections/catalog/500001032\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>)</span></span></div></div><div style='flex: 0.35'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><div class=\"language-text codehilite\"><pre><span></span><code>Rocket\n\u251c\u2500\u2500 Engine\n\u2502   \u251c\u2500\u2500 #4-40 Screw\n\u2502   \u2502   \u2514\u2500\u2500 QTY: 5\n\u2502   \u2514\u2500\u2500 #4-40 Nut\n\u2502       \u2514\u2500\u2500 QTY: 5\n\u2514\u2500\u2500 Fuel Tank\n    \u251c\u2500\u2500 #4-40 Screw\n    \u2502   \u2514\u2500\u2500 QTY: 2\n    \u2514\u2500\u2500 #4-40 Nut\n        \u2514\u2500\u2500 QTY: 3\n</code></pre></div>\nRocket BOM for demonstration purposes only</span></span></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"the-hierarchical-model\">The Hierarchical Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>1963: Rockwell Int'l requests part tracking system from IBM for Apollo program</li>\n<li>\n<span class=\"paragraph\">1965: Berman (IBM) and Nordyke (Rockwell) develop Disk Applications in a Teleprocessing Environment (DATE)</span>\n<ul>\n<li>Decouple disk access from applications which execute queries against data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">1968: Information Control System/Data Language Interface (ICS/DL/I) begins operating</span>\n<ul>\n<li>Sold as Information Management System (IMS) and still <a href=\"https://www.ibm.com/products/ims\" rel=\"noopener noreferrer\" target=\"_blank\">available for purchase</a></li>\n</ul>\n</li>\n</ul>\n<span class=\"paragraph\">Sources: IBM (<a href=\"https://www.ibm.com/history/information-management-system\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>, <a href=\"www.ibm.com/docs/en/zos-basic-skills?topic=now-history-ims-beginnings-nasa\">2</a>), Computer History Museum (<a href=\"https://www.computerhistory.org/collections/catalog/500001032\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>)</span></span></div></div><div style='flex: 0.35'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\"><div class=\"language-text codehilite\"><pre><span></span><code>Rocket\n\u251c\u2500\u2500 Engine\n\u2502   \u251c\u2500\u2500 #4-40 Screw\n\u2502   \u2502   \u2514\u2500\u2500 QTY: 5\n\u2502   \u2514\u2500\u2500 #4-40 Nut\n\u2502       \u2514\u2500\u2500 QTY: 5\n\u2514\u2500\u2500 Fuel Tank\n    \u251c\u2500\u2500 #4-40 Screw\n    \u2502   \u2514\u2500\u2500 QTY: 2\n    \u2514\u2500\u2500 #4-40 Nut\n        \u2514\u2500\u2500 QTY: 3\n</code></pre></div>\nRocket BOM for demonstration purposes only</span></span></div></div>"
           }
         }
       ],
@@ -71,12 +175,12 @@
     },
     {
       "id": "lEQa",
-      "code_hash": "9242cebf9028351b39b06c429bbaf547",
+      "code_hash": "098baf42c9cb895e9896a5774ae7b13c",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"the-relational-model\">The Relational Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">1970: Edgar Codd (IBM) publishes mathematical formalism of relational model for databases to escape constraints of heirarchical model (<a href=\"https://dl.acm.org/doi/10.1145/362384.362685\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>, <a href=\"https://www.ibm.com/history/relational-database\" rel=\"noopener noreferrer\" target=\"_blank\">2</a>)</span>\n<ul>\n<li>Store data in relational tables, identify rows with \"keys\", operations to query data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">1974: Structured English Query Language (SEQUEL) developed by Bryce (IBM) and Chamberlin (IBM) (<a href=\"https://dl.acm.org/doi/10.1145/800296.811515\" rel=\"noopener noreferrer\" target=\"_blank\">3</a>)</span>\n<blockquote>\n<span class=\"paragraph\">...identify the basic functions that are required by database users and develop a simple and consistent set of rules for applying thse functions to data.</span>\n</blockquote>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><table>\n<thead>\n<tr>\n<th>EMP</th>\n<th>NAME</th>\n<th>SAL</th>\n<th>MGR</th>\n<th>DEPT</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td>SMITH</td>\n<td>10000</td>\n<td>JONES</td>\n<td>TOY</td>\n</tr>\n<tr>\n<td></td>\n<td>JONES</td>\n<td>12000</td>\n<td>ANDERSON</td>\n<td>FURNITURE</td>\n</tr>\n<tr>\n<td></td>\n<td>LEE</td>\n<td>10000</td>\n<td>THOMAS</td>\n<td>APPLIANCES</td>\n</tr>\n</tbody>\n</table></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-text codehilite\"><pre><span></span><code>SELECT NAME\nFROM   EMP\nWHERE  DEPT = &#39;TOY&#39;\n</code></pre></div></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: center;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The Original SQL Query</span></span></div></div></div></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"the-relational-model\">The Relational Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">1970: Edgar Codd (IBM) publishes mathematical formalism of relational model for databases to escape constraints of hierarchical model (<a href=\"https://dl.acm.org/doi/10.1145/362384.362685\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>, <a href=\"https://www.ibm.com/history/relational-database\" rel=\"noopener noreferrer\" target=\"_blank\">2</a>)</span>\n<ul>\n<li>Store data in relational tables, identify rows with \"keys\", operations to query data</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">1974: Structured English Query Language (SEQUEL) developed by Bryce (IBM) and Chamberlin (IBM) (<a href=\"https://dl.acm.org/doi/10.1145/800296.811515\" rel=\"noopener noreferrer\" target=\"_blank\">3</a>)</span>\n<blockquote>\n<span class=\"paragraph\">...identify the basic functions that are required by database users and develop a simple and consistent set of rules for applying these functions to data.</span>\n</blockquote>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><table>\n<thead>\n<tr>\n<th>EMP</th>\n<th>NAME</th>\n<th>SAL</th>\n<th>MGR</th>\n<th>DEPT</th>\n</tr>\n</thead>\n<tbody>\n<tr>\n<td></td>\n<td>SMITH</td>\n<td>10000</td>\n<td>JONES</td>\n<td>TOY</td>\n</tr>\n<tr>\n<td></td>\n<td>JONES</td>\n<td>12000</td>\n<td>ANDERSON</td>\n<td>FURNITURE</td>\n</tr>\n<tr>\n<td></td>\n<td>LEE</td>\n<td>10000</td>\n<td>THOMAS</td>\n<td>APPLIANCES</td>\n</tr>\n</tbody>\n</table></span><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><div class=\"language-text codehilite\"><pre><span></span><code>SELECT NAME\nFROM   EMP\nWHERE  DEPT = &#39;TOY&#39;\n</code></pre></div></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: center;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">The Original SQL Query</span></span></div></div></div></div></div>"
           }
         }
       ],
@@ -84,25 +188,12 @@
     },
     {
       "id": "PKri",
-      "code_hash": "957cf5699936ebb253b66d9b2a653843",
+      "code_hash": "6bcc889612a86bffa0211fc6eac03be3",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"entity-relationship-model\">Entity-Relationship Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>1976: Peter Chen (MIT) publishes entity-relationship (ER) model (<a href=\"https://dl.acm.org/doi/10.1145/320434.320440\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>)</li>\n<li>\n<span class=\"paragraph\">Specified three categories of relationships between \"entities\" (i.e. nouns):</span>\n<ul>\n<li><marimo-tex class=\"arithmatex\">||(1:1||)</marimo-tex> \"one-to-one\"</li>\n<li><marimo-tex class=\"arithmatex\">||(1:n||)</marimo-tex> \"one-to-many\"</li>\n<li><marimo-tex class=\"arithmatex\">||(n:m||)</marimo-tex> \"many-to-many\"</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Extremely useful abstraction for reasoning about how real-world data is structured</span>\n<ul>\n<li>Can derive heirarchical, relational models, or others</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.4'><img src='./@file/26478-1984390-9wWjtZPH.png' /></div></div>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "Xref",
-      "code_hash": "55fa7a742d8f1e76464da43b48e42427",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">An Example of</span>\n<h1 id=\"data-transformation\">Data Transformation</h1></span>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"entity-relationship-model\">Entity-Relationship Model</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>1976: Peter Chen (MIT) publishes entity-relationship (ER) model (<a href=\"https://dl.acm.org/doi/10.1145/320434.320440\" rel=\"noopener noreferrer\" target=\"_blank\">1</a>)</li>\n<li>\n<span class=\"paragraph\">Specified three categories of relationships between \"entities\" (i.e. nouns):</span>\n<ul>\n<li><marimo-tex class=\"arithmatex\">||(1:1||)</marimo-tex> \"one-to-one\"</li>\n<li><marimo-tex class=\"arithmatex\">||(1:n||)</marimo-tex> \"one-to-many\"</li>\n<li><marimo-tex class=\"arithmatex\">||(n:m||)</marimo-tex> \"many-to-many\"</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Extremely useful abstraction for reasoning about how real-world data is structured</span>\n<ul>\n<li>Can derive hierarchical, relational models, or others</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.4'><img src='./@file/26478-1987336-71rQZsG5.png' /></div></div>"
           }
         }
       ],
@@ -213,26 +304,13 @@
       "console": []
     },
     {
-      "id": "ZHCJ",
-      "code_hash": "4901149fed37ed7d2ad55648b4812b59",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><span class=\"paragraph\">Living the</span>\n<h1 id=\"sql-dream\">SQL DREAM<sup id=\"fnref:2-1\"><a class=\"footnote-ref\" href=\"#fn:2-1\">1</a></sup></h1>\n<div class=\"footnote\">\n<hr />\n<ol>\n<li id=\"fn:2-1\">Databases Rule Everything Around Me&#160;<a class=\"footnote-backref\" href=\"#fnref:2-1\" title=\"Jump back to footnote 1 in the text\">&#8617;</a></li>\n</ol>\n</div></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "ROlb",
-      "code_hash": "0406da42d8c13ecded299764733a1db3",
+      "code_hash": "200e3e7ba1809d444978cdf79528248d",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: flex-start;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"realities-of-data-management\">Realities of Data Management</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Modeling: \"Should this be in one column, multiple columns, or a separate table?\"</li>\n<li>Transformation: \"How can I reshape and modify my data and get it ready for analysis?\"</li>\n<li>ACID compliance</li>\n<li>Replication: \"Can we have another copy for performance/redunancy?\"</li>\n<li>Volume: \"What if my data doesn't fit in RAM? Or on disk? Or on one machine?\"</li>\n</ul></span></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"realities-of-data-management\">Realities of Data Management</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Modeling: \"Should this be in one column, multiple columns, or a separate table?\"</li>\n<li>Transformation: \"How can I reshape and modify my data and get it ready for analysis?\"</li>\n<li>ACID compliance</li>\n<li>Replication: \"Can we have another copy for performance/redunancy?\"</li>\n<li>Volume: \"What if my data doesn't fit in RAM? Or on disk? Or on one machine?\"</li>\n</ul></span><marimo-callout-output data-html='&quot;&lt;span&gt;\u2139\ufe0f See backup for more; these are most related to SQL DBs&lt;/span&gt;&quot;' data-kind='&quot;info&quot;'></marimo-callout-output></div></div>"
           }
         }
       ],
@@ -240,12 +318,12 @@
     },
     {
       "id": "qnkX",
-      "code_hash": "b745f78f1ef9af82fbd7bc3d2b902a14",
+      "code_hash": "a619c5cbe04c186d4b2353c4740ac549",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"sql-databases\">SQL Databases</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Store data in rows (\"records\"), rows live in tables, tables live in databases</li>\n<li>Some systems implement \"catalogs\" which house multiple databases</li>\n<li>\n<span class=\"paragraph\">\"NoSQL\" databases also exist! (see backup)</span>\n<ul>\n<li>Highly optimized for non-tabluar data (e.g. vector stores, graphs)</li>\n<li>Special mention: \"Document\" databases (store JSON-like data) have lost ground to SQL DBs which can handle JSON-like data</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><marimo-mermaid data-diagram='&quot;&#92;ngraph BT&#92;n    Catalog[**Catalog**&lt;br&gt;Corporation]&#92;n&#92;n    DB1[(**Database**&lt;br&gt;Subsidiary 1)]&#92;n    DB2[(**Database**&lt;br&gt;Subsidiary 2)]&#92;n&#92;n    Table1[**Table**&lt;br&gt;Orders]&#92;n    Table2[**Table**&lt;br&gt;Customers]&#92;n&#92;n    Row1(**Row 1**)&#92;n    Row2(**Row 2**)&#92;n    Row3(**Row 3**)&#92;n&#92;n    Catalog --&gt; DB1&#92;n    Catalog --&gt; DB2&#92;n&#92;n    DB1 --&gt; Table1&#92;n    DB1 --&gt; Table2&#92;n&#92;n    DB2 ~~~ Table1&#92;n    DB2 ~~~ Table2&#92;n&#92;n    Table1 --&gt; Row1&#92;n    Table1 --&gt; Row2&#92;n    Table1 --&gt; Row3&#92;n&#92;n    Table2 ~~~ Row1&#92;n    Table2 ~~~ Row2&#92;n    Table2 ~~~ Row3&#92;n&quot;'></marimo-mermaid></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"sql-databases\">SQL Databases</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Store data in rows (\"records\"), rows live in tables, tables live in databases</li>\n<li>Some systems implement \"catalogs\" which house multiple databases</li>\n<li>\n<span class=\"paragraph\">\"NoSQL\" databases also exist! (see backup)</span>\n<ul>\n<li>Highly optimized for non-tabular data (e.g. vector stores, graphs)</li>\n<li>Special mention: \"Document\" databases (store JSON-like data) have lost ground to SQL DBs which can handle JSON-like data</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><marimo-mermaid data-diagram='&quot;&#92;ngraph BT&#92;n    Catalog[**Catalog**&lt;br&gt;Corporation]&#92;n&#92;n    DB1[(**Database**&lt;br&gt;Subsidiary 1)]&#92;n    DB2[(**Database**&lt;br&gt;Subsidiary 2)]&#92;n&#92;n    Table1[**Table**&lt;br&gt;Orders]&#92;n    Table2[**Table**&lt;br&gt;Customers]&#92;n&#92;n    Row1(**Row 1**)&#92;n    Row2(**Row 2**)&#92;n    Row3(**Row 3**)&#92;n&#92;n    Catalog --&gt; DB1&#92;n    Catalog --&gt; DB2&#92;n&#92;n    DB1 --&gt; Table1&#92;n    DB1 --&gt; Table2&#92;n&#92;n    DB2 ~~~ Table1&#92;n    DB2 ~~~ Table2&#92;n&#92;n    Table1 --&gt; Row1&#92;n    Table1 --&gt; Row2&#92;n    Table1 --&gt; Row3&#92;n&#92;n    Table2 ~~~ Row1&#92;n    Table2 ~~~ Row2&#92;n    Table2 ~~~ Row3&#92;n&quot;'></marimo-mermaid></div></div>"
           }
         }
       ],
@@ -253,12 +331,12 @@
     },
     {
       "id": "TqIu",
-      "code_hash": "f342942a6574981899caa3e7b3a5bc06",
+      "code_hash": "2134546e3b94d379b6e60121ae93d036",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.65'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"acid-compliance\">ACID Compliance</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Atomicity: all operations in a transaction complete, or none of them do</li>\n<li>Concistency: validation mechanisms and constraints, e.g \"Why is this phone number 13 digits?\"</li>\n<li>Isolation: handle concurrent updates to the same data</li>\n<li>Durability: changes should be saved to non-volatile memory to resist crashes/corruption</li>\n</ul></span></div></div><div style='flex: 0.3'><marimo-mermaid data-diagram='&quot;&#92;n%%{&#92;n  init: {&#92;n    &#x27;themeVariables&#x27;: {&#92;n      &#x27;fontSize&#x27;: &#x27;50px&#x27;&#92;n    }&#92;n  }&#92;n}%%&#92;nflowchart TB&#92;n&#92;nA[&#92;&quot;Atomicity &lt;br&gt; \ud83e\udde9&#92;&quot;]&#92;nC[&#92;&quot;Concistency &lt;br&gt; \u2705&#92;&quot;]&#92;nI[&#92;&quot;Isolation &lt;br&gt; \ud83d\udd12&#92;&quot;]&#92;nD[&#92;&quot;Durability &lt;br&gt; \ud83d\udc8e&#92;&quot;]&#92;n&#92;nA~~~C &#92;nI~~~D&#92;n&quot;'></marimo-mermaid></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.65'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"acid-compliance\">ACID Compliance</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Atomicity: all operations in a transaction complete, or none of them do</li>\n<li>Consistency: validation mechanisms and constraints, e.g \"Why is this phone number 13 digits?\"</li>\n<li>Isolation: handle concurrent updates to the same data</li>\n<li>Durability: changes should be saved to non-volatile memory to resist crashes/corruption</li>\n</ul></span></div></div><div style='flex: 0.3'><marimo-mermaid data-diagram='&quot;&#92;n%%{&#92;n  init: {&#92;n    &#x27;themeVariables&#x27;: {&#92;n      &#x27;fontSize&#x27;: &#x27;50px&#x27;&#92;n    }&#92;n  }&#92;n}%%&#92;nflowchart TB&#92;n&#92;nA[&#92;&quot;Atomicity &lt;br&gt; \ud83e\udde9&#92;&quot;]&#92;nC[&#92;&quot;Consistency &lt;br&gt; \u2705&#92;&quot;]&#92;nI[&#92;&quot;Isolation &lt;br&gt; \ud83d\udd12&#92;&quot;]&#92;nD[&#92;&quot;Durability &lt;br&gt; \ud83d\udc8e&#92;&quot;]&#92;n&#92;nA~~~C &#92;nI~~~D&#92;n&quot;'></marimo-mermaid></div></div>"
           }
         }
       ],
@@ -291,26 +369,13 @@
       "console": []
     },
     {
-      "id": "ulZA",
-      "code_hash": "4c562ea1b9932726434561bb7e97c609",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"types-of-sql-databases\">Types of SQL Databases</h2>\n<ul>\n<li>Row-oriented (transactional)</li>\n<li>\n<span class=\"paragraph\">Columnar (analytical)</span>\n<ul>\n<li>Lakehouse</li>\n</ul>\n</li>\n</ul></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
       "id": "ecfG",
       "code_hash": "72d1dae80e300e9d93d45e7c49c0b437",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.4'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"row-oriented-database\">Row-Oriented Database</h3></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Optimized for access to all information in a row</li>\n<li>\n<span class=\"paragraph\">Great for reading or writing to individual rows</span>\n<ul>\n<li>AKA \"transactional\" workloads where you need information on a specific record</li>\n</ul>\n</li>\n<li>e.g. PostgreSQL, MySQL</li>\n</ul></span></div></div><div style='flex: 0.6'><figure style='display: flex; flex-direction: column;'><img src='./@file/42107-1984390-oBtbUOgm.svg' /><figcaption style='color: var(--muted-foreground); text-align: center; margin-top: 0.5rem;'><a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a></figcaption></figure></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.4'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"row-oriented-database\">Row-Oriented Database</h3></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Optimized for access to all information in a row</li>\n<li>\n<span class=\"paragraph\">Great for reading or writing to individual rows</span>\n<ul>\n<li>AKA \"transactional\" workloads where you need information on a specific record</li>\n</ul>\n</li>\n<li>e.g. PostgreSQL, MySQL</li>\n</ul></span></div></div><div style='flex: 0.6'><figure style='display: flex; flex-direction: column;'><img src='./@file/42107-1987336-tERPqzAg.svg' /><figcaption style='color: var(--muted-foreground); text-align: center; margin-top: 0.5rem;'><a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a></figcaption></figure></div></div>"
           }
         }
       ],
@@ -323,7 +388,7 @@
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.4'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"column-oriented-database\">Column-Oriented Database</h3></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Optimized for access to all information in a column</li>\n<li>\n<span class=\"paragraph\">Great for reading about multiple records at once</span>\n<ul>\n<li>AKA \"analytical\" workloads where you only need specific columns</li>\n</ul>\n</li>\n<li>e.g Clickhouse, DuckDB </li>\n</ul></span></div></div><div style='flex: 0.6'><figure style='display: flex; flex-direction: column;'><img src='./@file/50690-1984390-NI1WvxAw.svg' /><figcaption style='color: var(--muted-foreground); text-align: center; margin-top: 0.5rem;'><a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a></figcaption></figure></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.4'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h3 id=\"column-oriented-database\">Column-Oriented Database</h3></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Optimized for access to all information in a column</li>\n<li>\n<span class=\"paragraph\">Great for reading about multiple records at once</span>\n<ul>\n<li>AKA \"analytical\" workloads where you only need specific columns</li>\n</ul>\n</li>\n<li>e.g Clickhouse, DuckDB </li>\n</ul></span></div></div><div style='flex: 0.6'><figure style='display: flex; flex-direction: column;'><img src='./@file/50690-1987336-z3EZRO5D.svg' /><figcaption style='color: var(--muted-foreground); text-align: center; margin-top: 0.5rem;'><a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a></figcaption></figure></div></div>"
           }
         }
       ],
@@ -331,12 +396,12 @@
     },
     {
       "id": "ZBYS",
-      "code_hash": "1c97dc5919b50d97c250a60a986d8218",
+      "code_hash": "dd7e0238f62da58155e6a06949221e05",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"drawbacks\">Drawbacks</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">Data models and schemas can be challenging to manage</span>\n<ul>\n<li>But you'll have to manage them eventually...</li>\n</ul>\n</li>\n<li>Databases require serious infrastructure support e.g. networking, containers/virtual machines...</li>\n<li>Different SQL dialects and features for different databases</li>\n<li>Less accessible than a simple filesystem (scary!)</li>\n</ul></span></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"drawbacks\">Drawbacks</h2></span><div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Databases require serious infrastructure support e.g. networking, containers/virtual machines...</li>\n<li>Different SQL dialects and features for different databases</li>\n<li>Less accessible than a simple filesystem (can be scary)</li>\n<li>Data models and schemas can be challenging to manage</li>\n</ul></span><marimo-callout-output data-html='&quot;&lt;span&gt;\u26a0\ufe0f You will need to manage your schema eventually! Downstream management is good for flexibility but bad for concistency.&lt;/span&gt;&quot;' data-kind='&quot;warn&quot;'></marimo-callout-output></div></div>"
           }
         }
       ],
@@ -344,12 +409,12 @@
     },
     {
       "id": "aLJB",
-      "code_hash": "9d4153de85ee46854c1edf87f3331026",
+      "code_hash": "ba17d21a09f9043d63e6a1b71ed81082",
       "outputs": [
         {
           "type": "data",
           "data": {
-            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"data-lakehouse\">Data Lakehouse</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">\"Data Warehouse\": analytical database with cleaned and joined data ready for queries</span>\n<ul>\n<li>Pay for compute (expensive) and disk (cheap), overhead to maintain rigid schemas  </li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">\"Data Lake\": Filesystem with assorted, unprocessed files (e.g. <code>CSV</code>, <code>JSON</code>, images)</span>\n<ul>\n<li>Pay mostly for disk, compute what you need, no goverance--watch the mess grow</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">\"Data Lakehouse\": Filesystem with columnar file formats like <code>.parquet</code>, <code>.root</code></span>\n<ul>\n<li>Files are tracked and managed, then <em>metadata</em> is warehoused in a \"catalog\"</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><marimo-mermaid data-diagram='&quot;&#92;nflowchart TB&#92;n&#92;nWH[&#92;&quot;**90s-00s**&lt;br&gt;Data Warehouse&#92;&quot;]&#92;nDL[&#92;&quot;**2010s**&lt;br&gt;Data Lake&#92;&quot;]&#92;nLH[&#92;&quot;**2020s**&lt;br&gt;Data Lakehouse&#92;&quot;]&#92;n&#92;nWH--&gt;DL--&gt;LH&#92;n&quot;'></marimo-mermaid></div></div>"
+            "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.6'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"data-lakehouse\">Data Lakehouse</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">\"Data Warehouse\": analytical database with cleaned and joined data ready for queries</span>\n<ul>\n<li>Pay for compute (expensive) and disk (cheap), overhead to maintain rigid schemas  </li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">\"Data Lake\": Filesystem with assorted, unprocessed files (e.g. <code>CSV</code>, <code>JSON</code>, images)</span>\n<ul>\n<li>Pay mostly for disk, compute what you need, no governance--watch the mess grow</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">\"Data Lakehouse\": Filesystem with columnar file formats like <code>.parquet</code>, <code>.root</code></span>\n<ul>\n<li>Files are tracked and managed, then <em>metadata</em> is warehoused in a \"catalog\"</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.35'><marimo-mermaid data-diagram='&quot;&#92;nflowchart TB&#92;n&#92;nWH[&#92;&quot;**90s-00s**&lt;br&gt;Data Warehouse&#92;&quot;]&#92;nDL[&#92;&quot;**2010s**&lt;br&gt;Data Lake&#92;&quot;]&#92;nLH[&#92;&quot;**2020s**&lt;br&gt;Data Lakehouse&#92;&quot;]&#92;n&#92;nWH--&gt;DL--&gt;LH&#92;n&quot;'></marimo-mermaid></div></div>"
           }
         }
       ],
@@ -363,19 +428,6 @@
           "type": "data",
           "data": {
             "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: center;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.4'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"data-lakehouse-concept\">Data Lakehouse Concept</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>Query your catalog to find out which files you need </li>\n<li>Process files with an engine: ALPACA, DuckDB, <code>polars</code>...</li>\n<li>Similar cost to a data lake (catalog is <marimo-tex class=\"arithmatex\">||(~10^6||)</marimo-tex> smaller than data)</li>\n<li>Can support schemas and schema evolution, ACID</li>\n<li>Warehouse-like system scales \"easily\" to petabytes</li>\n<li>Drawbacks: still requires tuning, creates tons of (well-organized) files</li>\n</ul></span></div></div><div style='flex: 0.6'><marimo-mermaid data-diagram='&quot;&#92;nsequenceDiagram&#92;n    autonumber&#92;n    participant User&#92;n    participant Storage as Filesystem &lt;br&gt; (e.g. CFS)&#92;n    participant Catalog as Data&lt;br&gt;Catalog&#92;n&#92;n    User-&gt;&gt;Catalog: SELECT path FROM files&lt;br&gt;WHERE run in (1234)&#92;n    Catalog-&gt;&gt;User: File list: [file1.root, file2.root]&#92;n    loop For each file&#92;n        User-&gt;&gt;Storage: Get events from file&#92;n        loop For each event&#92;n            User-&gt;&gt;Storage: Process event&#92;n        end&#92;n    end&#92;n&#92;n&quot;'></marimo-mermaid></div></div>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "xXTn",
-      "code_hash": "a7c8da4ac08787deb9bf1096e4720ec8",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"closing-thoughts\">Closing Thoughts</h1></span>"
           }
         }
       ],
@@ -402,58 +454,6 @@
           "type": "data",
           "data": {
             "text/html": "<div style='display: flex;flex: 1;flex-direction: row;justify-content: space-between;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><div style='flex: 0.45'><div style='display: flex;flex: 1;flex-direction: column;justify-content: flex-start;align-items: normal;flex-wrap: nowrap;gap: 0.5rem'><span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"takeaways\">Takeaways</h2></span><span class=\"markdown prose dark:prose-invert contents\"><ul>\n<li>\n<span class=\"paragraph\">Good data modeling can make analysis more flexible</span>\n<ul>\n<li>Don't be afraid to make more tables!</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">Databases can do many transformations</span>\n<ul>\n<li>Dataframes can do even more</li>\n</ul>\n</li>\n<li>\n<span class=\"paragraph\">SQL isn't going anywhere</span>\n<ul>\n<li>Dataframes are a great way to pick up concepts</li>\n</ul>\n</li>\n</ul></span></div></div><div style='flex: 0.55'><marimo-callout-output data-html='&quot;&lt;span&gt;\u2705 Local engines like DuckDB+ibis, or `polars` are outstanding for querying multiple `.parquet` files on a single node.&lt;/span&gt;&quot;' data-kind='&quot;success&quot;'></marimo-callout-output></div></div>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "NCOB",
-      "code_hash": "70fc76b666cfdbbeba8f9755a47594e5",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"next-time\">Next Time?</h2>\n<ul>\n<li>\n<span class=\"paragraph\">LZ Metadata Databases</span>\n<ul>\n<li>The Fate of the LZ Run DB Viewer</li>\n</ul>\n</li>\n<li>Advanced queries with ibis: more joins, gaps and islands, ranking, aggregations</li>\n</ul></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "aqbW",
-      "code_hash": "b150d310532541c583fbce57d6582420",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h1 id=\"backup\">Backup</h1></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "TRpd",
-      "code_hash": "8f3c28f8de66ee0538116b839dd3de35",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"nosql-databases\">NoSQL Databases</h2>\n<ul>\n<li>Vector: embed everything in a vector space, do similarity searches.</li>\n<li>Document: basically JSON, store hierarchical data</li>\n<li>Key-value: Lots of key-value pairs. Fast lookup and retrieval</li>\n<li>Graph: lots of nodes and edges</li>\n</ul></span>"
-          }
-        }
-      ],
-      "console": []
-    },
-    {
-      "id": "TXez",
-      "code_hash": "22e1952afdd221265d31a80f1650d8aa",
-      "outputs": [
-        {
-          "type": "data",
-          "data": {
-            "text/markdown": "<span class=\"markdown prose dark:prose-invert contents\"><h2 id=\"more-realities\">More Realities</h2>\n<ul>\n<li>Frequency: \"Can this change in 'real-time' I add or modify a new entry?\"</li>\n<li>Orchestration: \"How can we schedule these jobs and their dependencies?\"</li>\n<li>Sources and sinks: <code>.root</code>, <code>.xlsx</code>, <code>.parquet</code>, <code>.CSV</code>, <code>.json</code>, databases, APIs...</li>\n<li>Versioning: \"my_dataset_v34.csv\"</li>\n<li>Lineage: \"How did you create that column?\"</li>\n<li>Visualization: \"Can I get a dashboard for this?\"</li>\n</ul></span>"
           }
         }
       ],
