@@ -15,7 +15,7 @@ jobs:
           
           - name: 📄 Export notebook
             run: |
-                  uv run marimo export html-wasm 2026-sql-data-modeling.py -o site --mode edit -f --no-sandbox
+                  uvx marimo export html-wasm 2026-sql-data-modeling.py -o site --mode edit -f --no-sandbox
 
           - name: 📦 Upload Pages Artifact
             uses: actions/upload-pages-artifact@v3
