@@ -8,17 +8,19 @@ jobs:
         runs-on: ghcr.io/prefix-dev/pixi:latest
 
         steps:
-            # ... checkout and install dependencies
+          - uses: actions/checkout@v4
+          
+          - name: Install uv
+            uses: astral-sh/setup-uv@v3
+          
+          - name: 📄 Export notebook
+            run: |
+                  uv run marimo export html-wasm 2026-sql-data-modeling.py -o site --mode edit -f --no-sandbox
 
-            - name: 📄 Export notebook
-              run: |
-                  eval "$(pixi shell-hook)"
-                  marimo export html-wasm 2026-sql-data-modeling.py -o site --mode edit -f --no-sandbox
-
-            - name: 📦 Upload Pages Artifact
-              uses: actions/upload-pages-artifact@v3
-              with:
-                  path: site
+          - name: 📦 Upload Pages Artifact
+            uses: actions/upload-pages-artifact@v3
+            with:
+                path: site
 
     deploy:
         needs: build
