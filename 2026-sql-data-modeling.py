@@ -362,8 +362,8 @@ def _(un_pivot_user_data_code, unpivot_user_data):
     - (`service_name`, `account_name`) _or_ (`name`, `service_name`) work as a 3NF key
     - Picking good keys and attributes ultimately requires domain knowledge
     - Recall users:services are $m:n$
-    - What if one account could authenticate you with multiple services?
-        - accounts:services would also be $m:n$
+    - What if we included user:affiliations $m:n$?
+      - This would violate 2NF (affiliation doesn't depend on `service_name`)
     - More complex relationships often require multiple tables...
     """)
 
