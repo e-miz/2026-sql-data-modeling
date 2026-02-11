@@ -1,3 +1,8 @@
+on:
+  push:
+    branches: [main]  # Change to 'master' if that's your default branch
+  workflow_dispatch:  # Allows you to manually trigger from GitHub UI
+
 jobs:
     build:
         runs-on: ubuntu-latest
