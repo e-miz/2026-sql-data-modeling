@@ -12,7 +12,7 @@
 
 import marimo
 
-__generated_with = "0.19.9"
+__generated_with = "0.19.10"
 app = marimo.App(
     width="medium",
     layout_file="layouts/2026-sql-data-modeling.slides.json",
@@ -30,11 +30,10 @@ with app.setup(hide_code=True):
 
 @app.cell(hide_code=True)
 def _():
-    title = mo.md(r"""# Data Modeling""")
-    subtitle = mo.md(r"""## and SQL Databases """)
+    title = mo.md(r"""# Data Modeling and SQL Databases""")
     author = mo.md(r"### Eli Mizrachi (they/them)")
-    subsubtitle = mo.md("""SLAc National Accelerator Laboratory""")
-    mo.vstack([title, subtitle, author, subsubtitle], align="center", justify="center")
+    subsubtitle = mo.md("""SLAC National Accelerator Laboratory""")
+    mo.vstack([title, author, subsubtitle], align="center", justify="center")
     return
 
 
@@ -178,7 +177,7 @@ def _():
     Users in LZ often have multiple kinds of accounts for various services: gitlab, NERSC, online, slack, email, twiki.
     """)
 
-    _col1 = mo.md("""- $1:1$: One user has **one** name, and one name identifies(?) **one** user 
+    _col1 = mo.md("""- $1:1$: One user has **one** name, and one name identifies **one** user 😬
     - $1:n$: One account belongs to **one** user, and one user can have **many** accounts
       - Sometimes users have multiple accounts with a single service (e.g. email)!
     - $n:m$: One user can access **many** services, and services can have **many** users
@@ -249,11 +248,9 @@ def _():
 @app.cell
 def _():
     split_user_data_code = mo.ui.code_editor(
-        """split_user_data = user_data.assign(email=user_data["email"].str.split(". "))"""
+        """split_user_data = user_data.assign(email=user_data["email"].str.split(", "))""", show_copy_button=False
     )
-
-    run_button = mo.ui.button(label="Run")
-    return run_button, split_user_data_code
+    return (split_user_data_code,)
 
 
 @app.cell
@@ -265,15 +262,13 @@ def _(split_user_data_code):
 
 
 @app.cell
-def _(run_button, split_user_data, split_user_data_code):
+def _(split_user_data, split_user_data_code):
     _title = mo.md("""## Step 1: Split User Data""")
 
-    _col1_1 = mo.md("""
+    _col1 = mo.md("""
     - We have a comma-separated list in the e-mail column
     - Let's override it with a new one that makes it into a column of lists
     """)
-
-    _col1 = mo.vstack([_col1_1, run_button])
 
     _col2 = mo.vstack([split_user_data_code, split_user_data])
 
@@ -282,82 +277,99 @@ def _(run_button, split_user_data, split_user_data_code):
 
 
 @app.cell
-def _(split_user_data):
-    # 1 value per cell
-    un_nest_split_user_data = split_user_data.explode("email", ignore_index=True)
-    un_nest_split_user_data
+def _():
+    un_nest_user_data_code = mo.ui.code_editor(
+        """un_nest_split_user_data = split_user_data.explode("email", ignore_index=True)""",
+        show_copy_button=False,
+        disabled=True,
+    )
+    return (un_nest_user_data_code,)
+
+
+@app.cell
+def _(un_nest_user_data_code):
+    _ns = dict(globals())
+    exec(un_nest_user_data_code.value, _ns)
+    un_nest_split_user_data = _ns.get("un_nest_split_user_data")
     return (un_nest_split_user_data,)
 
 
 @app.cell
-def _():
-    # Rows here are uniquely determined by... all the columns?
-    # Not great, since some columns are null
-    # Not great, since cell values depend on only part of the key
-    # Ultimately how do decide based on semantic meaning how to group columns into tables
+def _(un_nest_split_user_data, un_nest_user_data_code):
+    _title = mo.md("""## Step 2: First Normal Form""")
+
+    _col1_1 = mo.md("""
+    - It's a lot easier to do analysis with one value per cell!
+    - Dataframe libraries have methods to unpack lists:
+      - `pandas` has `explode`, `polars` has `unnest`
+      - `json_normalize` can unpack JSON files
+    - [1st Normal Form (1NF)](https://en.wikipedia.org/wiki/First_normal_form): 2-D array with unique rows, one value per cell
+    - Still a bit awkward to query: who has the most e-mail accounts? How many accounts does each person have?
+    """)
+
+    _col2 = mo.vstack([un_nest_user_data_code, un_nest_split_user_data])
+
+    mo.hstack([mo.vstack([_title, _col1_1]), _col2], align="center", widths=[0.45, 0.60])
     return
 
 
 @app.cell
 def _(un_nest_split_user_data):
-    unpivot_user_data = un_nest_split_user_data.melt(
+    _title = mo.md("""## Step 2.5: Normal Forms and Keys""")
+
+    _col1_1 = mo.md("""
+    - Key is a column that uniquely define a row
+      - Composite key: set of columns which identify a row
+      - Non-keys are "attributes" (can think of object-oriented programming)  
+    - [2NF](https://en.wikipedia.org/wiki/Third_normal_form): 1NF and attributes depend on _entire_ key
+    - [3NF](https://en.wikipedia.org/wiki/Third_normal_form): 2NF and attributes depend on _only_ the key
+    """)
+
+    _col2 = mo.vstack([un_nest_split_user_data])
+
+    mo.hstack([mo.vstack([_title, _col1_1]), _col2], align="center", widths=[0.45, 0.60])
+    return
+
+
+@app.cell
+def _():
+    un_pivot_user_data_code = mo.ui.code_editor(
+        """unpivot_user_data = un_nest_split_user_data.melt(
         id_vars=["name"],
         value_vars=["gitlab", "email", "nersc"],
         var_name="service_name",
         value_name="account_name",
+        ).drop_duplicates().dropna(ignore_index=True)""",
+        show_copy_button=False,
+        disabled=True,
     )
-    unpivot_user_data
-    return
+    return (un_pivot_user_data_code,)
 
 
-@app.cell(hide_code=True)
-def _():
-    _title = mo.md(r"""
-    ## Try This Instead
+@app.cell
+def _(un_pivot_user_data_code):
+    _ns = dict(globals())
+    exec(un_pivot_user_data_code.value, _ns)
+    unpivot_user_data = _ns.get("unpivot_user_data")
+    return (unpivot_user_data,)
+
+
+@app.cell
+def _(un_pivot_user_data_code, unpivot_user_data):
+    _title = mo.md("""## Step 3: Unpivot""")
+
+    _col1_1 = mo.md("""
+    - (`service_name`, `account_name`) _or_ (`name`, `service_name`) work as a 3NF key
+    - Picking good keys and attributes ultimately requires domain knowledge
+    - Recall users:services are $m:n$
+    - What if one account could authenticate you with multiple services?
+        - accounts:services would also be $m:n$
+    - More complex relationships often require multiple tables...
     """)
 
-    _text1 = mo.md("""
-    - Avoids a common pitfall: $m:n$ relationships require "junction" tables
-    - Organizing into separate tables is called ["normalization"](https://en.wikipedia.org/wiki/Database_normalization)
-    - [Third Normal Form (3NF)](https://www.splunk.com/en_us/blog/learn/data-normalization.html): One value per cell, every row unique, keys and non-keys are [bijective](https://en.wikipedia.org/wiki/Bijection)
-    - You just need to map `id` to meaningful values ("denormalize")
-    """)
+    _col2 = mo.vstack([un_pivot_user_data_code, unpivot_user_data])
 
-    _col1 = mo.vstack([_title, _text1])
-
-    _t1 = mo.md("""
-    | user_id | user_name|
-    |---------|----------|
-    | 1       | Alice    |
-    | 2       | Bob      |
-    | 3       | Charlie  |
-    """)
-
-    _t2 = mo.md("""
-    | service_id | service_name |
-    |------------|--------------|
-    | 1          | Email        |
-    | 2          | GitLab       |
-    | 3          | NERSC        |
-    """)
-
-    _col2 = mo.vstack([_t1, _t2])
-
-    _t3 = mo.md("""
-    | user_id | service_id | account_name          |
-    |---------|------------|-----------------------|
-    | 1       | 1          | alice1@hotmail.com    |
-    | 1       | 1          | alice2@gmail.com      |
-    | 1       | 2          | 1337alice             |
-    | 2       | 1          | bob1@gmail.com        |
-    | 2       | 3          | bobg                  |
-    | 3       | 1          | charlie@yahoo.com     |
-    | 3       | 1          | charlie.work@corp.com |
-    | 3       | 2          | hacker_charlie        |
-    | 3       | 3          | charliew              |
-    """)
-
-    mo.hstack([_col1, _col2, _t3], align="center", widths=[0.5, 0.2, 0.25])
+    mo.hstack([mo.vstack([_title, _col1_1]), _col2], align="center", widths=[0.45, 0.60])
     return
 
 
@@ -568,6 +580,7 @@ def _():
     _col2 = mo.image(
         "public/img/clickhouse-row-oriented.svg",
         caption="<a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a>",
+        width="1200px"
     )
 
     mo.hstack([mo.vstack([_title, _col1]), _col2], widths=[0.4, 0.6])
@@ -586,6 +599,7 @@ def _():
     _col2 = mo.image(
         "public/img/clickhouse-col-oriented.svg",
         caption="<a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a>",
+        width="1200px"
     )
 
     mo.hstack([mo.vstack([_title, _col1]), _col2], widths=[0.4, 0.6])
@@ -726,7 +740,7 @@ def _():
 
     - LZ Metadata Databases
       - The Fate of the LZ Run DB Viewer
-    - Advanced queries with ibis: more joins, gaps and islands, ranking, aggregations
+    - Advanced queries with ibis: joins, gaps and islands, ranking, aggregations
     """)
     return
 
