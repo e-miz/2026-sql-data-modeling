@@ -8,4 +8,4 @@ version = "0.1.0"
 [tasks]
 
 [dependencies]
-marimo = ">=0.19.8,<0.20"
+marimo = ">=0.20.4,<0.21"
