@@ -2,7 +2,13 @@
 # requires-python = ">=3.14"
 # dependencies = [
 #     "marimo>=0.19.2",
+#     "mcp>=1",
+#     "nbconvert==7.17.0",
+#     "nbformat==5.10.4",
 #     "pandas==2.3.3",
+#     "playwright==1.58.0",
+#     "pydantic>=2",
+#     "pydantic-ai==1.68.0",
 #     "python-lsp-ruff==2.3.0",
 #     "python-lsp-server==1.14.0",
 #     "vl-convert-python==1.9.0",
@@ -12,7 +18,7 @@
 
 import marimo
 
-__generated_with = "0.19.10"
+__generated_with = "0.20.4"
 app = marimo.App(
     width="medium",
     layout_file="layouts/2026-sql-data-modeling.slides.json",
@@ -247,28 +253,31 @@ def _():
 
 @app.cell
 def _():
-    split_user_data_code = mo.ui.code_editor(
-        """split_user_data = user_data.assign(email=user_data["email"].str.split(", "))""", show_copy_button=False
+    _sep_options = [", ", ",", " ", "@", "hotmail"]
+
+    sep_selection = mo.ui.dropdown(
+        label="Split Separator Characters", options=_sep_options, value=_sep_options[0]
     )
-    return (split_user_data_code,)
+    return (sep_selection,)
 
 
 @app.cell
-def _(split_user_data_code):
-    _ns = dict(globals())
-    exec(split_user_data_code.value, _ns)
-    split_user_data = _ns.get("split_user_data")
-    return (split_user_data,)
+def _(sep_selection):
+    split_user_data = user_data.assign(email=user_data["email"].str.split(f"{sep_selection.value}"))
 
+    split_user_data_code = mo.ui.code_editor(
+        f"""split_user_data = user_data.assign(email=user_data["email"].str.split("{sep_selection.value}"))""",
+        disabled=True,
+    )
 
-@app.cell
-def _(split_user_data, split_user_data_code):
     _title = mo.md("""## Step 1: Split User Data""")
 
-    _col1 = mo.md("""
+    _col1_text = mo.md("""
     - We have a comma-separated list in the e-mail column
-    - Let's override it with a new one that makes it into a column of lists
+    - Use separator dropdown to preview different split scenarios
     """)
+
+    _col1 = mo.vstack([_col1_text, sep_selection])
 
     _col2 = mo.vstack([split_user_data_code, split_user_data])
 
@@ -580,7 +589,7 @@ def _():
     _col2 = mo.image(
         "public/img/clickhouse-row-oriented.svg",
         caption="<a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a>",
-        width="1200px"
+        width="1200px",
     )
 
     mo.hstack([mo.vstack([_title, _col1]), _col2], widths=[0.4, 0.6])
@@ -599,7 +608,7 @@ def _():
     _col2 = mo.image(
         "public/img/clickhouse-col-oriented.svg",
         caption="<a href='https://clickhouse.com/docs/knowledgebase/columnar-database'>Clickhouse</a>",
-        width="1200px"
+        width="1200px",
     )
 
     mo.hstack([mo.vstack([_title, _col1]), _col2], widths=[0.4, 0.6])
